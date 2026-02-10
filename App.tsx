@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === 'Space') {
+      if (e.key === 'ArrowRight' || e.code === 'Space' || e.key === ' ') {
         nextSlide();
       } else if (e.key === 'ArrowLeft') {
         prevSlide();
