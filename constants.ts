@@ -63,22 +63,23 @@ export const SLIDES: SlideData[] = [
   {
     id: 4,
     type: 'standard',
-    title: 'Primeira Entrega',
+    title: 'Expedição Confirmada: 23/02',
     subtitle: 'Casas Padrão com Laje Convencional',
     content: {
       subSections: [
         {
-          title: 'Status Atual',
+          title: 'Detalhamento da Carga (29 Unidades)',
           items: [
-            'O setor de projetos trabalhou de forma intensiva.',
-            '32 casas com projetos já aprovados.'
+            '16 un - Padrão 39m²',
+            '08 un - 48m² com Suíte',
+            '05 un - Padrão 52m²'
           ]
         },
         {
-          title: 'Prazos Definidos',
+          title: 'Status Geral',
           items: [
-            'Expedição prevista: 23 de fevereiro.',
-            'Entrega final dos projetos: até 24 de fevereiro.'
+            '32 casas com projetos já aprovados.',
+            'Entrega final de todos os projetos desta fase: até 24 de fevereiro.'
           ]
         }
       ]
@@ -88,22 +89,24 @@ export const SLIDES: SlideData[] = [
     id: 5,
     type: 'standard',
     title: 'Laje em Steel Frame',
-    subtitle: 'Casas Padrão (39 m²)',
+    subtitle: 'Adaptação dos Projetos Padrão',
     responsible: 'Felipe',
     content: {
       subSections: [
         {
-          title: 'Cronograma de Projetos',
+          title: 'Escopo de Projetos (Steel Frame)',
           items: [
-            'Envio do primeiro projeto: até terça-feira da próxima semana.',
-            'Envio total para aprovação: até 20 de fevereiro.'
+            'Adaptação das mesmas tipologias da fase anterior:',
+            'Casas Padrão 39m²',
+            'Casas 48m² com Suíte',
+            'Casas Padrão 52m²'
           ]
         },
         {
-          title: 'Produção',
+          title: 'Cronograma e Produção',
           items: [
-            'Total: 6 projetos de casas padrão.',
-            'Produção e expedição previstas para a 1ª semana de março.'
+            'Envio dos projetos para aprovação: até 20 de fevereiro.',
+            'REGRA DE PRODUÇÃO: O início da fabricação ocorre de 11 a 12 dias APÓS a aprovação do projeto.'
           ]
         }
       ]
@@ -113,17 +116,23 @@ export const SLIDES: SlideData[] = [
     id: 6,
     type: 'timeline',
     title: 'Casas Personalizadas',
-    subtitle: 'Laje Convencional',
-    responsible: 'Rinser São',
+    subtitle: 'Cronograma de Prioridades',
+    responsible: 'Rifferson',
     content: {
       subSections: [
         {
-          title: 'Esta Semana',
-          items: ['Casas do empreendimento Dinápolis', 'Projeto Siena']
+          title: 'Fase 1 (Atual): Laje Convencional',
+          items: [
+            'Esta Semana: Casas do empreendimento Dinápolis e Projeto Siena.',
+            'Próxima Semana: Residencial Ravena 2.'
+          ]
         },
         {
-          title: 'Próxima Semana',
-          items: ['Residencial Ravena 2']
+          title: 'Fase 2 (Sequencial): Laje Steel Frame',
+          items: [
+            'Início dos projetos apenas após o envio das personalizadas com laje convencional.',
+            'Mantém-se a regra de produção: 11 a 12 dias após aprovação.'
+          ]
         }
       ]
     }
@@ -145,21 +154,22 @@ export const SLIDES: SlideData[] = [
     id: 8,
     type: 'summary',
     title: 'Resumo e Prazos-Chave',
-    subtitle: 'Próximos passos consolidados',
+    subtitle: 'Regras para produção e entregas',
     content: {
       subSections: [
         {
-          title: 'Fevereiro',
+          title: 'Próximos Marcos',
           items: [
-            'Até 20/02: Envio dos 6 projetos Steel Frame.',
-            'Até 23/02: Expedição Casas Padrão.',
-            'Até 24/02: Entrega de 32 telhados padrão.'
+            '20/02: Limite para envio dos projetos Steel Frame (Felipe).',
+            '23/02: Expedição das Casas Padrão (Convencional).',
+            '24/02: Conclusão dos projetos Padrão Convencional.'
           ]
         },
         {
-          title: 'Março',
+          title: 'Política de Produção',
           items: [
-            '1ª Semana: Produção Laje Steel Frame.'
+            'Lead Time: A produção é iniciada de 11 a 12 dias após a aprovação formal do projeto.',
+            'Prioridade: Finalizar personalizadas laje convencional antes de iniciar personalizadas Steel Frame.'
           ]
         }
       ]

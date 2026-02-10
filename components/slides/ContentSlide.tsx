@@ -8,30 +8,30 @@ interface Props {
 
 export const ContentSlide: React.FC<Props> = ({ data }) => {
   return (
-    <div className="w-full max-w-6xl mx-auto h-full flex flex-col justify-center">
-      <div className="mb-8 border-l-4 border-engelar-green pl-6">
-        <h2 className="text-4xl font-bold text-engelar-navy mb-2">{data.title}</h2>
-        {data.subtitle && <h3 className="text-xl text-gray-500">{data.subtitle}</h3>}
+    <div className="w-full max-w-6xl mx-auto flex flex-col justify-center min-h-min">
+      <div className="mb-6 md:mb-8 border-l-4 border-engelar-green pl-4 md:pl-6">
+        <h2 className="text-2xl md:text-4xl font-bold text-engelar-navy mb-1 md:mb-2">{data.title}</h2>
+        {data.subtitle && <h3 className="text-base md:text-xl text-gray-500">{data.subtitle}</h3>}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="space-y-4 md:space-y-6">
           {data.content?.bullets?.map((bullet, idx) => (
-            <div key={idx} className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
-              <CheckCircle2 className="w-6 h-6 text-engelar-green flex-shrink-0 mt-1" />
-              <p className="text-lg text-gray-700 leading-relaxed">{bullet}</p>
+            <div key={idx} className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
+              <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-engelar-green flex-shrink-0 mt-1" />
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed">{bullet}</p>
             </div>
           ))}
 
           {data.content?.subSections?.map((section, idx) => (
-            <div key={idx} className="mb-6">
-              <h4 className="text-lg font-bold text-engelar-navy mb-3 flex items-center gap-2">
+            <div key={idx} className="mb-4 md:mb-6">
+              <h4 className="text-base md:text-lg font-bold text-engelar-navy mb-2 md:mb-3 flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-engelar-green" />
                 {section.title}
               </h4>
-              <ul className="space-y-3 pl-4 border-l border-gray-200 ml-1">
+              <ul className="space-y-2 md:space-y-3 pl-4 border-l border-gray-200 ml-1">
                 {section.items.map((item, i) => (
-                  <li key={i} className="text-gray-700 text-lg py-1">{item}</li>
+                  <li key={i} className="text-gray-700 text-base md:text-lg py-1">{item}</li>
                 ))}
               </ul>
             </div>
@@ -39,22 +39,22 @@ export const ContentSlide: React.FC<Props> = ({ data }) => {
         </div>
 
         {/* Right side decoration or Responsible Info */}
-        <div className="hidden md:flex flex-col justify-center items-center h-full">
+        <div className="flex flex-col justify-center items-center w-full mt-4 md:mt-0">
            {data.responsible && (
-             <div className="bg-engelar-navy text-white p-6 rounded-xl shadow-xl w-full max-w-sm mb-6">
+             <div className="bg-engelar-navy text-white p-4 md:p-6 rounded-xl shadow-xl w-full max-w-sm mb-4 md:mb-6">
                <div className="flex items-center gap-3 mb-2">
-                 <User className="text-engelar-green" />
-                 <span className="text-sm uppercase tracking-wider text-gray-400">Responsável</span>
+                 <User className="text-engelar-green w-5 h-5 md:w-6 md:h-6" />
+                 <span className="text-xs md:text-sm uppercase tracking-wider text-gray-400">Responsável</span>
                </div>
-               <p className="text-2xl font-bold">{data.responsible}</p>
+               <p className="text-xl md:text-2xl font-bold">{data.responsible}</p>
              </div>
            )}
            
-           <div className="w-full h-64 bg-gradient-to-br from-engelar-navy/5 to-engelar-green/10 rounded-2xl flex items-center justify-center p-8 border border-gray-100">
+           <div className="w-full h-32 md:h-64 bg-gradient-to-br from-engelar-navy/5 to-engelar-green/10 rounded-2xl flex items-center justify-center p-4 md:p-8 border border-gray-100">
               {data.type === 'critical' ? (
-                 <AlertCircle className="w-32 h-32 text-red-500 opacity-20" />
+                 <AlertCircle className="w-16 h-16 md:w-32 md:h-32 text-red-500 opacity-20" />
               ) : (
-                 <div className="grid grid-cols-2 gap-4 w-full h-full opacity-20">
+                 <div className="grid grid-cols-2 gap-2 md:gap-4 w-full h-full opacity-20">
                    <div className="bg-engelar-navy rounded-lg col-span-2 row-span-2"></div>
                    <div className="bg-engelar-green rounded-lg"></div>
                    <div className="bg-engelar-navy rounded-lg"></div>
