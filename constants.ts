@@ -80,9 +80,10 @@ export const SLIDES: SlideData[] = [
           ]
         },
         {
-          title: 'Status Geral',
+          title: 'Condição Crítica de Prazo',
           items: [
-            '32 casas com projetos já aprovados.'
+            '32 casas com projetos tecnicamente prontos.',
+            'ATENÇÃO: A expedição programada para 23/02 está estritamente condicionada à formalização de todas as aprovações pendentes impreterivelmente HOJE (10/02).'
           ]
         }
       ]
@@ -92,20 +93,21 @@ export const SLIDES: SlideData[] = [
     id: 5,
     type: 'standard',
     title: 'Laje em Steel Frame',
-    subtitle: 'Adaptação dos Projetos Padrão',
+    subtitle: 'Cronograma de Adaptação e Envio',
     responsible: 'Felipe',
     content: {
       subSections: [
         {
-          title: 'Escopo de Projetos (Steel Frame)',
+          title: 'Planejamento de Entregas (Projetos)',
           items: [
-            'Adaptação das mesmas tipologias da fase anterior sendo as casas padrão agora com laje em steel frame com previsão de envio dos projetos para analise e aprovação no dia 23/02.'
+            'Pacote Geral: Adaptação das tipologias padrão para laje em Steel Frame com envio para análise até o último dia do mês.',
+            'Prioridade (Casa 39m²): O projeto da Casa Padrão 39m² (Laje Steel) será antecipado e enviado até a próxima terça-feira (17/02).'
           ]
         },
         {
-          title: 'Cronograma e Produção',
+          title: 'Impacto na Produção',
           items: [
-            'REGRA DE PRODUÇÃO: O início da fabricação ocorre de 11 a 12 dias APÓS a aprovação do projeto.'
+            'REGRA DE PRODUÇÃO: O lead time de fabricação é de 11 a 12 dias contados a partir da aprovação formal.'
           ]
         }
       ]
@@ -143,8 +145,8 @@ export const SLIDES: SlideData[] = [
     subtitle: 'Desafios técnicos para produção antecipada',
     content: {
       bullets: [
-        'Impossível produzir todos antecipadamente: Ausência de mapa completo e variações de desníveis.',
-        'Ação Engelar: Envio apenas dos rufos de casas com vizinhos definidos.',
+        'Impossível produzir todos antecipadamente: Ausência de mapa completo e variações de desníveis no local.',
+        'Ação Engelar (Logística Dividida): Na Entrega 1, serão enviados os rufos padrão (não divisa). Na Entrega 2, serão enviados os rufos de divisa, exclusivamente para as casas com vizinhos já definidos.',
         'Responsabilidade Cliente: Controle e aplicação (peças não reutilizáveis).'
       ]
     }
@@ -159,7 +161,7 @@ export const SLIDES: SlideData[] = [
         {
           title: 'Próximos Marcos',
           items: [
-            '23/02: Previsão de envio dos projetos com laje em Steel Frame (Felipe).',
+            'Até o final deste mês: Previsão de envio dos projetos com laje em Steel Frame para análise (Responsável: Felipe).',
             '24/02: Previsão de entrega dos materiais dos telhados das casas Padrão com laje Convencional.'
           ]
         },
