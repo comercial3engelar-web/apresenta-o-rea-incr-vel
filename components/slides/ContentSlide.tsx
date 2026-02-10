@@ -1,67 +1,96 @@
 import React from 'react';
 import { SlideData } from '../../types';
-import { CheckCircle2, AlertCircle, User } from 'lucide-react';
+import { CheckCircle2, User, Layers, ArrowRight } from 'lucide-react';
 
 interface Props {
   data: SlideData;
 }
 
 export const ContentSlide: React.FC<Props> = ({ data }) => {
+  const hasSubSections = data.content?.subSections && data.content.subSections.length > 0;
+
   return (
-    <div className="w-full max-w-6xl mx-auto flex flex-col justify-center min-h-min">
-      <div className="mb-6 md:mb-8 border-l-4 border-engelar-green pl-4 md:pl-6">
-        <h2 className="text-2xl md:text-4xl font-bold text-engelar-navy mb-1 md:mb-2">{data.title}</h2>
-        {data.subtitle && <h3 className="text-base md:text-xl text-gray-500">{data.subtitle}</h3>}
+    <div className="w-full max-w-7xl mx-auto flex flex-col h-full justify-start md:justify-center py-4">
+      
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row md:items-start justify-between mb-8 md:mb-12 border-l-4 border-engelar-green pl-6">
+        <div className="flex-1">
+          <h2 className="text-3xl md:text-5xl font-bold text-engelar-navy mb-2 leading-tight">
+            {data.title}
+          </h2>
+          {data.subtitle && (
+            <h3 className="text-lg md:text-2xl text-gray-500 font-light">
+              {data.subtitle}
+            </h3>
+          )}
+        </div>
+        
+        {/* Responsible Badge - Elegant display */}
+        {data.responsible && (
+          <div className="mt-4 md:mt-0 md:ml-6 flex items-center bg-engelar-navy/5 px-5 py-3 rounded-xl border border-engelar-navy/10 self-start">
+            <div className="bg-engelar-navy p-2 rounded-full mr-3">
+              <User className="w-4 h-4 text-white" />
+            </div>
+            <div>
+              <span className="block text-xs text-gray-500 uppercase tracking-wider font-semibold">Responsável</span>
+              <span className="block text-lg font-bold text-engelar-navy">{data.responsible}</span>
+            </div>
+          </div>
+        )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-        <div className="space-y-4 md:space-y-6">
-          {data.content?.bullets?.map((bullet, idx) => (
-            <div key={idx} className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
-              <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-engelar-green flex-shrink-0 mt-1" />
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed">{bullet}</p>
-            </div>
-          ))}
+      {/* Content Area */}
+      <div className="w-full">
+        
+        {/* Scenario 1: SubSections (Cards Layout) */}
+        {hasSubSections && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {data.content?.subSections?.map((section, idx) => (
+              <div 
+                key={idx} 
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-engelar-green/30 transition-colors group h-full flex flex-col"
+              >
+                <div className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
+                  <div className="w-10 h-10 rounded-lg bg-engelar-gray flex items-center justify-center group-hover:bg-engelar-green group-hover:text-white transition-colors text-engelar-navy">
+                    <Layers className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-bold text-engelar-navy">
+                    {section.title}
+                  </h4>
+                </div>
+                
+                <ul className="space-y-4 flex-grow">
+                  {section.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-engelar-green" />
+                      <span className="text-gray-700 text-base md:text-lg leading-relaxed font-medium">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
 
-          {data.content?.subSections?.map((section, idx) => (
-            <div key={idx} className="mb-4 md:mb-6">
-              <h4 className="text-base md:text-lg font-bold text-engelar-navy mb-2 md:mb-3 flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-engelar-green" />
-                {section.title}
-              </h4>
-              <ul className="space-y-2 md:space-y-3 pl-4 border-l border-gray-200 ml-1">
-                {section.items.map((item, i) => (
-                  <li key={i} className="text-gray-700 text-base md:text-lg py-1">{item}</li>
-                ))}
-              </ul>
+        {/* Scenario 2: Simple Bullets (List Layout) */}
+        {!hasSubSections && data.content?.bullets && (
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 max-w-5xl mx-auto">
+            <div className="grid gap-6">
+              {data.content.bullets.map((bullet, idx) => (
+                <div key={idx} className="flex items-start gap-5 group">
+                  <div className="mt-1 flex-shrink-0">
+                     <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 text-engelar-green group-hover:scale-110 transition-transform" />
+                  </div>
+                  <p className="text-lg md:text-2xl text-engelar-navy leading-relaxed border-b border-gray-50 pb-4 w-full">
+                    {bullet}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-
-        {/* Right side decoration or Responsible Info */}
-        <div className="flex flex-col justify-center items-center w-full mt-4 md:mt-0">
-           {data.responsible && (
-             <div className="bg-engelar-navy text-white p-4 md:p-6 rounded-xl shadow-xl w-full max-w-sm mb-4 md:mb-6">
-               <div className="flex items-center gap-3 mb-2">
-                 <User className="text-engelar-green w-5 h-5 md:w-6 md:h-6" />
-                 <span className="text-xs md:text-sm uppercase tracking-wider text-gray-400">Responsável</span>
-               </div>
-               <p className="text-xl md:text-2xl font-bold">{data.responsible}</p>
-             </div>
-           )}
-           
-           <div className="w-full h-32 md:h-64 bg-gradient-to-br from-engelar-navy/5 to-engelar-green/10 rounded-2xl flex items-center justify-center p-4 md:p-8 border border-gray-100">
-              {data.type === 'critical' ? (
-                 <AlertCircle className="w-16 h-16 md:w-32 md:h-32 text-red-500 opacity-20" />
-              ) : (
-                 <div className="grid grid-cols-2 gap-2 md:gap-4 w-full h-full opacity-20">
-                   <div className="bg-engelar-navy rounded-lg col-span-2 row-span-2"></div>
-                   <div className="bg-engelar-green rounded-lg"></div>
-                   <div className="bg-engelar-navy rounded-lg"></div>
-                 </div>
-              )}
-           </div>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

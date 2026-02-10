@@ -17,9 +17,9 @@ export const SLIDES: SlideData[] = [
     subtitle: 'Cenário original aprovado no fechamento do contrato',
     content: {
       bullets: [
-        'Empreendimento fechado inicialmente com 7 projetos de telhados.',
-        'Casas padrão com laje convencional.',
-        'Escopo original totalmente definido e aprovado.'
+        'Empreendimento fechado inicialmente contemplando todas as casas padrão.',
+        'Escopo definido: Casas com laje convencional e Casas com laje em Steel Frame.',
+        'Projetos das tipologias padrão definidos e aprovados.'
       ]
     }
   },
@@ -31,15 +31,17 @@ export const SLIDES: SlideData[] = [
     content: {
       subSections: [
         {
-          title: 'Solicitação Inicial',
-          items: ['Alteração de algumas casas para laje em Steel Frame.']
+          title: 'Expansão do Empreendimento (Impacto Alto)',
+          items: [
+            'Inclusão posterior de 22 casas personalizadas.',
+            'Cada casa personalizada exige um projeto exclusivo de telhado.',
+            'Volume extra não previsto no cronograma base, impactando diretamente a engenharia e produção.'
+          ]
         },
         {
-          title: 'Nova Alteração (Impacto Alto)',
+          title: 'Desalinhamento de Premissas',
           items: [
-            'Inclusão de 22 casas personalizadas.',
-            'Cada casa personalizada exige um projeto exclusivo de telhado.',
-            'Alterações não previstas no cronograma inicial, impactando o setor de projetos e liberação para produção.'
+            'Na época da negociação, os prazos informados não foram firmados de acordo com o cenário atual, nem mesmo o nível de detalhamento de cada casa, se tornando urgências devido ao acréscimo de escopo.'
           ]
         }
       ]
@@ -51,7 +53,7 @@ export const SLIDES: SlideData[] = [
     title: 'Escopo Total Atualizado',
     subtitle: 'Comparativo de volumes de projeto',
     content: {
-      text: 'O volume de projetos aumentou significativamente com as personalizações.'
+      text: 'O volume de projetos aumentou significativamente com a inclusão das personalizadas.'
     },
     chartData: [
       { name: 'Padrão Convencional', value: 7, fill: '#2E3E58' },
@@ -68,18 +70,19 @@ export const SLIDES: SlideData[] = [
     content: {
       subSections: [
         {
-          title: 'Detalhamento da Carga (29 Unidades)',
+          title: 'Detalhamento da Carga (32 Unidades)',
           items: [
-            '16 un - Padrão 39m²',
-            '08 un - 48m² com Suíte',
-            '05 un - Padrão 52m²'
+            '17 un - Padrão 39m²',
+            '06 un - 48m² com Suíte',
+            '05 un - Padrão 52m²',
+            '02 un - 57m² com Office',
+            '02 un - 59m² com Quarto'
           ]
         },
         {
           title: 'Status Geral',
           items: [
-            '32 casas com projetos já aprovados.',
-            'Entrega final de todos os projetos desta fase: até 24 de fevereiro.'
+            '32 casas com projetos já aprovados.'
           ]
         }
       ]
@@ -96,16 +99,12 @@ export const SLIDES: SlideData[] = [
         {
           title: 'Escopo de Projetos (Steel Frame)',
           items: [
-            'Adaptação das mesmas tipologias da fase anterior:',
-            'Casas Padrão 39m²',
-            'Casas 48m² com Suíte',
-            'Casas Padrão 52m²'
+            'Adaptação das mesmas tipologias da fase anterior sendo as casas padrão agora com laje em steel frame com previsão de envio dos projetos para analise e aprovação no dia 23/02.'
           ]
         },
         {
           title: 'Cronograma e Produção',
           items: [
-            'Envio dos projetos para aprovação: até 20 de fevereiro.',
             'REGRA DE PRODUÇÃO: O início da fabricação ocorre de 11 a 12 dias APÓS a aprovação do projeto.'
           ]
         }
@@ -160,9 +159,8 @@ export const SLIDES: SlideData[] = [
         {
           title: 'Próximos Marcos',
           items: [
-            '20/02: Limite para envio dos projetos Steel Frame (Felipe).',
-            '23/02: Expedição das Casas Padrão (Convencional).',
-            '24/02: Conclusão dos projetos Padrão Convencional.'
+            '23/02: Previsão de envio dos projetos com laje em Steel Frame (Felipe).',
+            '24/02: Previsão de entrega dos materiais dos telhados das casas Padrão com laje Convencional.'
           ]
         },
         {
