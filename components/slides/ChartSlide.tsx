@@ -27,7 +27,7 @@ export const ChartSlide: React.FC<Props> = ({ data }) => {
                 outerRadius={80}
                 paddingAngle={5}
                 dataKey="value"
-                label={({ name, percent }) => `${(percent * 100).toFixed(0)}%`}
+                label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
               >
                 {data.chartData?.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.fill} stroke="none" />
